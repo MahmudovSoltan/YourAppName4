@@ -34,6 +34,7 @@ const FeedBackForm = () => {
     return (
         <View>
             <Text style={styles.title}>Feedback Form</Text>
+            
             <View style={[styles.inputContainer, err.name ? styles.errInput : null]}>
                 <TextInput
                     style={styles.input}
@@ -64,11 +65,12 @@ export default FeedBackForm
 const styles = StyleSheet.create({
     title: {
         fontSize: 20,
-        fontWeight: 'bold',
+        fontWeight: '600',
         color: '#000',
         marginBottom: 20,
         textAlign: 'center',
         marginTop: 20,
+        fontFamily: 'Poppins-Bold',
     },
     inputContainer: {
         borderColor: '#000',

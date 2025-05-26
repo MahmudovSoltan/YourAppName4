@@ -2,6 +2,7 @@ import { View, Text, FlatList, StyleSheet } from 'react-native'
 import React, { useCallback } from 'react'
 import { useGlobalContext } from '../../../Provider/GlobalProvider';
 import FeedBackForm from './FeedBackForm';
+import { FlashList } from '@shopify/flash-list';
 
 const FeedBackList = () => {
     const { product } = useGlobalContext();
@@ -16,16 +17,11 @@ const FeedBackList = () => {
 
     return (
         <View>
-            <FlatList
+            <FlashList
                 data={product}
-                keyExtractor={(item, index) => index.toString()}
                 renderItem={renderItem}
                 ListHeaderComponent={<FeedBackForm />}
-                ListEmptyComponent={() => (
-                    <View style={{ padding: 20 }}>
-                        <Text style={styles.emptyItem}>No feedback available</Text>
-                    </View>
-                )}
+               estimatedItemSize={100}
             />
         </View>
     )
@@ -38,5 +34,5 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 20,
     },
-    emptyItem: { fontSize: 16, textAlign: 'center' }
+    emptyItem: { fontSize: 16, textAlign: 'center', fontFamily: "Inter" }
 });
