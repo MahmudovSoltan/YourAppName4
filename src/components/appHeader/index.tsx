@@ -1,6 +1,7 @@
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import React from 'react';
-// import Ionicons from 'react-native-vector-icons/Ionicons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/AntDesign';
 
 interface AppHeaderProps {
   title: string;
@@ -24,13 +25,16 @@ const AppHeader: React.FC<AppHeaderProps> = ({ title, onBackPress, onMenuPress }
       <Text style={styles.title}>{title}</Text>
 
       {/* Menu düyməsi */}
+
       {onMenuPress ? (
         <TouchableOpacity onPress={onMenuPress} style={styles.iconButton}>
-          <Ionicons name="menu" size={24} color="#fff" />
+          {/* <Ionicons name="menu" size={24} color="#fff" /> */}
+          <Icon name="menufold" size={24} color="#fff" />
         </TouchableOpacity>
       ) : (
         <View style={styles.placeholder} />
       )}
+
     </View>
   );
 };
