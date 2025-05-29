@@ -1,11 +1,13 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import AnimationBox from '../../components/AnimationBox';
 
 const SettingsScreen = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Settings</Text>
       <Text style={styles.text}>Change your preferences, theme, and more.</Text>
+    <AnimationBox/>
     </View>
   );
 };

@@ -4,7 +4,7 @@ import React from 'react'
 import { useNavigation, NavigationProp, DrawerActions } from '@react-navigation/native'
 import Button from '../../../ui/button';
 import AppHeader from '../../../components/appHeader';
-// import AppHeader from '../../components/appHeader';
+
 
 type RootStackParamList = {
   HomeScren: undefined;

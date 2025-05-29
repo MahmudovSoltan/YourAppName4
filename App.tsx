@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 import { SafeAreaView, StatusBar } from 'react-native';
 import BootSplash from "react-native-bootsplash";
-import GlobalProvider from './src/Provider/GlobalProvider';
-import Todos from './src/components/toDos/Todos';
 import { gestureHandlerRootHOC } from 'react-native-gesture-handler';
 import AppStack from './src/stacks/AppStatc';
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 
 function App(): React.ReactElement {
 
@@ -25,7 +24,10 @@ function App(): React.ReactElement {
       <StatusBar barStyle="dark-content" />
       {/* <MainSrens/> */}
       {/* <Todos/> */}
-       <AppStack/>
+      <BottomSheetModalProvider>
+        <AppStack />
+
+      </BottomSheetModalProvider>
     </SafeAreaView>
 
   );

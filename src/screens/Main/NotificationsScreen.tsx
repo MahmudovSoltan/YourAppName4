@@ -1,11 +1,13 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import AnimatedBox from '../../components/AnimatedBox';
 
 const NotificationsScreen = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Notifications</Text>
       <Text style={styles.text}>Manage your notification settings here.</Text>
+        <AnimatedBox/>
     </View>
   );
 };
