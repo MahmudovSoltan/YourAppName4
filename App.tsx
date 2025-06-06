@@ -20,13 +20,10 @@ function App(): React.ReactElement {
 
   return (
 
-    <SafeAreaView style={{ flex: 1 }}>
-      <StatusBar barStyle="dark-content" />
-      {/* <MainSrens/> */}
-      {/* <Todos/> */}
+    <SafeAreaView style={{ flex: 1,backgroundColor:'#121212' }}>
+      <StatusBar barStyle="light-content" />
       <BottomSheetModalProvider>
         <AppStack />
-
       </BottomSheetModalProvider>
     </SafeAreaView>
 

@@ -26,7 +26,7 @@ const ProductList = () => {
       <Text style={styles.price}>{item.price}</Text>
     </View>
   ), [])
-  console.log(product);
+  // console.log(product);
 
   return (
     <FlatList

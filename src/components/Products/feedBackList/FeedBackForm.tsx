@@ -24,7 +24,7 @@ const FeedBackForm = () => {
         const isValid = !newErr.name && !newErr.feedback;
 
         if (isValid) {
-            console.log('Form submitted successfully');
+            // console.log('Form submitted successfully');
             // Form göndərmə əməliyyatları
             addProduct(data); // Yeni məhsulu əlavə edin
             setData(initialState); // Formu sıfırlayın
