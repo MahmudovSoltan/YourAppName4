@@ -57,7 +57,8 @@ export const useAuthtore = create<IAuthStore>((set) => ({
                 set({ profileData: response.data });
             }
             return response;
-        }
+        },
+        reset: () => set({ ...initial }),
     }
 
 }));

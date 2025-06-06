@@ -6,9 +6,8 @@ import {
   StyleSheet,
   Dimensions,
   TouchableOpacity,
-
+  Image,
 } from 'react-native';
-
 
 const { width } = Dimensions.get('window');
 
@@ -38,8 +37,7 @@ const WelcomeScreen = ({ navigation }: any) => {
     if (currentIndex < slides.length - 1) {
       flatListRef.current.scrollToIndex({ index: currentIndex + 1 });
     } else {
-      navigation.navigate('SignUp'); // Change to your actual route
-      // LocalStorage.setItem('onboarding', 'true');
+      navigation.navigate('SignUp');
     }
   };
 
@@ -60,9 +58,10 @@ const WelcomeScreen = ({ navigation }: any) => {
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => (
           <View style={styles.slide}>
-            <View style={{ alignItems: 'center', marginBottom: 24 }}>
-           
-            </View>
+            <Image
+              source={require('../../assets/images/logo.png')}
+              style={styles.logo}
+            />
             <Text style={styles.title}>{item.title}</Text>
             <Text style={styles.subtitle}>{item.subtitle}</Text>
           </View>
@@ -71,7 +70,6 @@ const WelcomeScreen = ({ navigation }: any) => {
         viewabilityConfig={viewConfig}
       />
 
-      {/* Page Indicators */}
       <View style={styles.pagination}>
         {slides.map((_, index) => (
           <View
@@ -95,7 +93,7 @@ export default WelcomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#121212',
+    backgroundColor: '#ffffff',
     paddingBottom: 60,
   },
   slide: {
@@ -104,16 +102,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 24,
   },
+  logo: {
+    width: 100,
+    height: 100,
+    marginBottom: 24,
+  },
   title: {
     fontSize: 28,
-    color: '#ffffff',
+    color: '#222222',
     fontWeight: 'bold',
     marginBottom: 12,
     textAlign: 'center',
   },
   subtitle: {
     fontSize: 16,
-    color: '#BBBBBB',
+    color: '#555555',
     textAlign: 'center',
   },
   pagination: {
@@ -125,15 +128,15 @@ const styles = StyleSheet.create({
     height: 8,
     width: 8,
     borderRadius: 4,
-    backgroundColor: '#444',
+    backgroundColor: '#ccc',
     marginHorizontal: 4,
   },
   dotActive: {
-    backgroundColor: 'Black',
+    backgroundColor: '#007AFF',
     width: 16,
   },
   button: {
-    backgroundColor: 'Black',
+    backgroundColor: '#007AFF',
     marginHorizontal: 60,
     marginTop: 20,
     paddingVertical: 14,

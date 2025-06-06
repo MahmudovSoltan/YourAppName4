@@ -6,10 +6,12 @@ import { useAuthtore } from '../../../store/auth.store';
 import { useShallow } from 'zustand/react/shallow';
 import { FlashList } from '@shopify/flash-list';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { logout } from '../../../utils/instance';
+import { useNavigation } from '@react-navigation/native';
 
 const HomePage = () => {
   const [likedIds, setLikedIds] = useState<number[]>([]);
-  
+  const navigation = useNavigation<any>();
   const removeToken = async () => {
     await localStore.removeItem('access_token');
   };
@@ -34,7 +36,10 @@ const HomePage = () => {
       prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
     );
   };
+const handleLogout = () => {
+  logout(); // token sil, store sıfırla
 
+};
   const renderItem = ({ item }: any) => {
     const isLiked = likedIds.includes(item.id);
 
@@ -64,7 +69,7 @@ const HomePage = () => {
 
   return (
     <View style={styles.container}>
-      <Button title='Log out' style={styles.logoutButton} onPress={removeToken} />
+      <Button title='Log out' style={styles.logoutButton} onPress={handleLogout} />
       <Text style={styles.header}>Filmlər</Text>
       <FlashList
         data={movies}

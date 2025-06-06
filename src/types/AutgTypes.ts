@@ -49,7 +49,8 @@ export interface IActions {
     getAllMoviesFunc: () => Promise<IResponse<IMovies[]>>,
     getFavoritesMoviesFunc: () => Promise<IResponse<IFavorite[]>>,
     getProfileInfoFunc:()=>Promise<IResponse<IProfile>>,
-    profileEditFunc:(data:IProfileData)=>Promise<IResponse<IProfile>>
+    profileEditFunc:(data:IProfileData)=>Promise<IResponse<IProfile>>,
+    reset:any
 }
 export interface IMovies {
     id: number,
